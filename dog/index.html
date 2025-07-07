@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Discord Metadata -->
+    <meta property="og:title" content="dog" />
+    <meta property="og:description" content="dog" />
+    <meta property="og:url" content="https://dustwyn.com/dog" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#5865F2" />
+
+    <!-- I dislike TWITTER -->
+    <meta name="twitter:title" content="dog" />
+    <meta name="twitter:description" content="dog" />
+    <meta name="twitter:image" content="https://yourdomain.com/embed-banner.png" />
+
+    <!-- Other meta stuff -->
+    <title>dog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #24272f; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .image-container {
+            perspective: 1000px;
+        }
+
+        .image-element {
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                        0 10px 20px rgba(0, 0, 0, 0.2);
+            will-change: transform, box-shadow;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="flex items-center justify-center min-h-screen w-full p-4">
+        <div class="image-container relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+            <img
+                id="hoverImage"
+                src="./images/dog.gif"
+                alt="A square placeholder image"
+                class="image-element w-full h-full object-cover rounded-xl"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x400/000000/ffffff?text=Silly%20Dog%20Image%20Not%20Found';"
+            >
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageContainer = document.querySelector('.image-container');
+            const imageElement = document.getElementById('hoverImage');
+            const maxRotation = 10;
+            const zoomScale = 1.05;
+
+            const resetTransform = () => {
+                imageElement.style.transform = `scale(1) rotateX(0deg) rotateY(0deg)`;
+                imageElement.style.boxShadow = `0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)`;
+            };
+
+            imageContainer.addEventListener('mousemove', (e) => {
+                const rect = imageContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const mouseX = e.clientX - centerX;
+                const mouseY = e.clientY - centerY;
+
+                const normalizedX = mouseX / (rect.width / 2);
+                const normalizedY = mouseY / (rect.height / 2);
+
+                const rotateY = normalizedX * maxRotation;
+                const rotateX = -normalizedY * maxRotation;
+
+                imageElement.style.transform = `
+                    scale(${zoomScale})
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                `;
+
+                imageElement.style.boxShadow = `
+                    ${-normalizedX * 10}px ${-normalizedY * 10}px 20px rgba(0, 0, 0, 0.3),
+                    ${normalizedX * 5}px ${normalizedY * 5}px 10px rgba(0, 0, 0, 0.1)
+                `;
+            });
+
+            imageContainer.addEventListener('mouseleave', () => {
+                resetTransform();
+            });
+            resetTransform();
+        });
+    </script>
+</body>
+</html>
