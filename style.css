@@ -295,13 +295,12 @@ mark {
 .marquee-container {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .scroller {
   display: flex;
-  gap: var(--spacing-medium);
-  width: fit-content;
-  padding-left: 100%;
+  width: max-content;
   animation: scroll-horizontal 30s linear infinite;
 }
 
@@ -309,15 +308,34 @@ mark {
   animation-play-state: paused;
 }
 
+.scroller-content {
+  display: flex;
+  gap: var(--spacing-medium);
+  white-space: nowrap;
+}
+
+/* Add a right margin to the last image in the first scroller-content */
+.scroller-content:first-child a:last-child {
+  margin-right: var(--spacing-medium);
+}
+
+.scroller-content a {
+  display: inline-block;
+}
+
 .scroller img {
-  min-height: 62px;
-  display: block;
+  height: 62px;
+  width: auto;
   image-rendering: pixelated;
+  display: block;
 }
 
 @keyframes scroll-horizontal {
-  to {
-    transform: translateX(-100%);
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
