@@ -1,15 +1,16 @@
 @keyframes glow {
- from {
-   border-color: rgb(255, 255, 255);
- }
- to {
-   border-color: transparent;
- }
+  from {
+    border-color: #fff;
+  }
+  to {
+    border-color: transparent;
+  }
 }
 body {
   background-color: #000;
-  color: #A8491A; /* Changed from #00AA00 */
+  color: #eee;
   font-family: monospace;
+  font-size: 18px; /* increased from default */
 }
 body:after {
   content: " ";
@@ -26,86 +27,93 @@ body:after {
   pointer-events: none;
 }
 .allMessages {
- color: #A8491A; /* Changed from #00AA00 */
- text-shadow: 1px 1px 3px #A8491A; /* Changed from #0A0 */
- border-radius: 10px;
- font-family: monospace;
- letter-spacing: -1px;
- max-width: calc(100% - 14px);
- position: relative;
+  color: #eee;
+  text-shadow: 1px 1px 3px #aaa;
+  border-radius: 10px;
+  font-family: monospace;
+  letter-spacing: -1px;
+  max-width: calc(100% - 14px);
+  position: relative;
+  font-size: 18px; /* match body */
 }
 .allMessages.pm {
-  padding-top: 26px;
+  padding-top: 30px; /* slightly increased for spacing */
 }
 .allMessages.pm:before {
   content: "Private Message:";
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 16px;
-  line-height: 16px;
+  height: 18px; /* increased height */
+  line-height: 18px;
   position: absolute;
   left: 6px;
-  top: 5px;
+  top: 6px;
   font-weight: bolder;
-  color: #D86B2F; /* Changed from #0F0 - slightly lighter orange */
+  color: #ccc;
+  font-size: 14px;
 }
 .sent {
 }
 .recieved {
 }
 .senderInfo {
-  color: #D86B2F; /* Changed from #0F0 */
-  text-shadow: 0 0 3px #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
+  text-shadow: 0 0 3px #ccc;
+  font-size: 16px;
 }
 #background {
- background: radial-gradient(#5e2508, #301204); /* Changed from #030 */
- scrollbar-color: transparent transparent;
- scrollbar-width: none;
+  background: radial-gradient(#222, #000);
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
 }
 #background::-webkit-scrollbar {
   width: 0;
   display: none;
 }
 #input, #nameEntry {
- color: #D86B2F; /* Changed from #0F0 */
- background: #000;
- border: none;
- outline: none;
- font-family: monospace;
+  color: #ccc;
+  background: #000;
+  border: none;
+  outline: none;
+  font-family: monospace;
+  font-size: 18px;
 }
 #input:empty:before {
- color: #6B2B0A; /* Changed from #050 - darker orange */
+  color: #555;
+  font-size: 18px;
 }
 #timestamp {
- color: #D86B2F; /* Changed from #0F0 */
- font-style: italic;
- font-family: monospace;
- font-size: 9pt;
- text-align: left !important;
- width: calc(100% - 20px);
- padding: 0 10px 0 10px;
- text-shadow: 1px 1px 3px #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
+  font-style: italic;
+  font-family: monospace;
+  font-size: 12pt; /* about 16px */
+  text-align: left !important;
+  width: calc(100% - 20px);
+  padding: 0 10px 0 10px;
+  text-shadow: 1px 1px 3px #ccc;
 }
 #top_banner {
- visibility: hidden;
+  visibility: hidden;
 }
 blockquote {
- background-color: #222;
- border-color: #D86B2F; /* Changed from #0F0 */
+  background-color: #222;
+  border-color: #ccc;
+  font-size: 16px;
+  padding: 10px;
 }
 #loadMore {
- color: #D86B2F; /* Changed from #0F0 */
- font-family: monospace;
- font-size: 10pt;
+  color: #ccc;
+  font-family: monospace;
+  font-size: 14pt; /* about 18.6px */
 }
 #loadMore:hover {
- text-decoration: underline;
- text-decoration-style: dotted;
- text-decoration-color: #F00;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #fff;
 }
 .pinned {
- border-color: #D86B2F; /* Changed from #0F0 */
+  border-color: #ccc;
 }
 .msgWrapper:hover {
   animation: 500ms linear infinite alternate glow;
@@ -118,11 +126,11 @@ blockquote {
   height: 100%;
   width: 2%;
   background-color: transparent;
-  border-top: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-bottom: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-right: solid 2px #D86B2F; /* Changed from #0F0 */
+  border-top: solid 2px #ccc;
+  border-bottom: solid 2px #ccc;
+  border-right: solid 2px #ccc;
   border-color: inherit;
-  filter: drop-shadow(0 0 5px #D86B2F); /* Changed from #0F0 */
+  filter: drop-shadow(0 0 5px #ccc);
 }
 .msgWrapper:hover:before {
   content: " ";
@@ -132,11 +140,11 @@ blockquote {
   height: 100%;
   width: 2%;
   background-color: transparent;
-  border-top: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-bottom: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-left: solid 2px #D86B2F; /* Changed from #0F0 */
+  border-top: solid 2px #ccc;
+  border-bottom: solid 2px #ccc;
+  border-left: solid 2px #ccc;
   border-color: inherit;
-  filter: drop-shadow(0 0 2px #D86B2F); /* Changed from #0F0 */
+  filter: drop-shadow(0 0 2px #ccc);
 }
 .pinned:after {
   content: " ";
@@ -146,11 +154,11 @@ blockquote {
   height: 100%;
   width: 2%;
   background-color: transparent;
-  border-top: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-bottom: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-right: solid 2px #D86B2F; /* Changed from #0F0 */
+  border-top: solid 2px #ccc;
+  border-bottom: solid 2px #ccc;
+  border-right: solid 2px #ccc;
   border-color: inherit;
-  filter: drop-shadow(0 0 5px #D86B2F); /* Changed from #0F0 */
+  filter: drop-shadow(0 0 5px #ccc);
 }
 .pinned:before {
   content: " ";
@@ -160,42 +168,45 @@ blockquote {
   height: 100%;
   width: 2%;
   background-color: transparent;
-  border-top: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-bottom: solid 2px #D86B2F; /* Changed from #0F0 */
-  border-left: solid 2px #D86B2F; /* Changed from #0F0 */
+  border-top: solid 2px #ccc;
+  border-bottom: solid 2px #ccc;
+  border-left: solid 2px #ccc;
   border-color: inherit;
-  filter: drop-shadow(0 0 2px #D86B2F); /* Changed from #0F0 */
+  filter: drop-shadow(0 0 2px #ccc);
 }
 .mod, .owner, .tester {
   width: 0;
-  font-size: 8pt;
+  font-size: 10pt; /* slightly bigger */
   text-shadow: none;
 }
 .mod::before {
   content: "[MODERATOR]";
   display: inline-block;
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
   position: absolute;
   top: 7px;
   right: 7px;
-  text-shadow: 0 0 3px #D86B2F; /* Changed from #0F0 */
+  text-shadow: 0 0 3px #ccc;
+  font-size: 14px;
 }
 .owner::before {
   content: "[OWNER]";
   display: inline-block;
-  color: #F00;
+  color: #fff;
   position: absolute;
   top: 7px;
   right: 7px;
-  text-shadow: 0 0 3px #F00;
+  text-shadow: 0 0 3px #fff;
+  font-size: 14px;
 }
 .beta::before {
   content: "[BETA TESTER]";
   display: inline-block;
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
   position: absolute;
   top: 7px;
   right: 7px;
+  font-size: 14px;
 }
 #settings {
   background-image: none;
@@ -205,19 +216,21 @@ blockquote {
   right: 0;
   top: 0;
   content: "#";
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
+  font-size: 18px;
 }
 #settings:hover:after {
   font-weight: bold;
 }
 #replyBanner {
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
   font-family: monospace;
-  font-size: 8pt;
-  text-shadow: 0 0 3px #D86B2F; /* Changed from #0F0 */
+  font-size: 12pt;
+  text-shadow: 0 0 3px #ccc;
 }
 .msgBody a {
-  color: #D86B2F !important; /* Changed from #0F0 */
+  color: #ccc !important;
+  font-size: 18px;
 }
 #emojiTrayToggle:after {
   content: ":)";
@@ -229,43 +242,45 @@ blockquote {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #D86B2F; /* Changed from #0F0 */
-  text-shadow: 0 0 2px #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
+  text-shadow: 0 0 2px #ccc;
+  font-size: 18px;
 }
 #emojiTray {
   background-color: #000;
-  color: #D86B2F; /* Changed from #0F0 */
-  border-color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
+  border-color: #ccc;
 }
 .emojiInGrid:hover {
   transform: scale(200%);
-  filter: drop-shadow(0px 2px 3px #D86B2F); /* Changed from #0F0 */
+  filter: drop-shadow(0px 2px 3px #ccc);
   transition: all 500ms ease-in-out;
 }
 #settingsMenu {
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
 }
 #settingsMenu input[type=text] {
   border: none;
-  border-bottom: solid 1px #D86B2F; /* Changed from #0F0 */
+  border-bottom: solid 1px #ccc;
   background-color: transparent;
-  color: #D86B2F; /* Changed from #0F0 */
+  color: #ccc;
   outline: none !important;
+  font-size: 18px;
 }
 #save {
   border: none;
   background-color: transparent;
-  color: #D86B2F; /* Changed from #0F0 */
-  font-size: 12pt;
+  color: #ccc;
+  font-size: 14pt;
   font-weight: bolder;
   cursor: pointer;
 }
 #save:hover {
-  text-shadow: 0 0 5px #D86B2F; /* Changed from #0F0 */
+  text-shadow: 0 0 5px #ccc;
 }
 #save::before {
   content: "[";
-    margin-right: 10px;
+  margin-right: 10px;
 }
 #save::after {
   content: "]";
@@ -277,6 +292,7 @@ blockquote {
   border-radius: 1px;
   width: unset;
   height: unset;
+  font-size: 16px;
 }
 #is_typing:before {
   content: "Someone's typing  ";
@@ -284,6 +300,6 @@ blockquote {
 #is_typing > span {
   height: 2px;
   width: 2px;
-  borer-radius: 0;
-  background-color: #D86B2F; /* Changed from #0F0 */
+  border-radius: 0;
+  background-color: #ccc;
 }

@@ -27,7 +27,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
   <title>dustwyn</title>
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -50,6 +51,7 @@
   <!-- :3 -->
   </head>
 <body>
+  <script src="https://iframe.chat/scripts/main.min.js"></script>
   <div class="wrap">
     <div class="container">
       <header class="header">
@@ -61,22 +63,21 @@
 
       <nav class="nav" aria-label="Primary Navigation">
         <a href="./index.html" class="navbutton">Home</a>
-        <a href="./chat.html" class="navbutton">Chat</a>
+        <a href="./index.html" class="navbutton">More soon!</a>
       </nav>
 
       <main class="main">
-        <section class="flex-row"> 
-          <article class="content-box"> 
-            <div class="titlebar"><h1>Hello!</h1></div>
-              <div class="content">
-                <p>
-                  This website is under construction.<br>
-                  <img style="image-rendering: pixelated; max-height: 270px;" src="./images/construction.gif" />
-                </p>
-              </div>
-          </article>
-        </section>
         <section class="flex-row">
+          
+      <article class="content-box">
+        <div class="titlebar">
+          <h1>Welcome!</h1>
+        </div>
+        <div class="content">
+          <p>This website is a passion project and is actively being worked on!</p>
+        </div>
+      </article>
+
           <article class="content-box links-box">
             <div class="titlebar">
               <h1>Links</h1>
@@ -84,39 +85,53 @@
             <div class="content links-content">
               <div class="link-row">
                 <a href="mailto:contact@dustwyn.com" target="_blank" rel="noopener noreferrer" class="link-button email-button">
-                  <img src="./images/icons/Mail.png" alt="" class="link-icon" />
+                  <img src="./images/icons/Mail.png" alt="Mail Icon" class="link-icon" />
                   <span>E-Mail</span>
                 </a>
-                <button class="copy-button" data-email="contact@dustwyn.com" title="Copy Email">
+                <button class="copy-button" aria-label="Copy Email" data-email="contact@dustwyn.com" title="Copy Email">
                   📋
                 </button>
               </div>
               <a href="https://dustwyn.com/discord" target="_blank" rel="noopener noreferrer" class="link-button">
-                <img src="./images/icons/Discord.png" alt="" class="link-icon" />
+                <img src="./images/icons/Discord.png" alt="Discord Icon" class="link-icon" />
                 <span>Discord Community</span>
               </a>
               <a href="https://bsky.app/profile/dustwyn.com" target="_blank" rel="noopener noreferrer" class="link-button">
-                <img src="./images/icons/Bluesky.png" alt="" class="link-icon" />
+                <img src="./images/icons/Bluesky.png" alt="Bluesky Icon" class="link-icon" />
                 <span>Bluesky</span>
               </a>
               <a href="https://www.youtube.com/@dustwyn" target="_blank" rel="noopener noreferrer" class="link-button">
-                <img src="./images/icons/YouTube.png" alt="" class="link-icon" />
+                <img src="./images/icons/YouTube.png" alt="YouTube Icon" class="link-icon" />
                 <span>YouTube</span>
               </a>
               <a href="https://www.twitch.tv/dustwynlive" target="_blank" rel="noopener noreferrer" class="link-button">
-                <img src="./images/icons/Twitch.png" alt="" class="link-icon" />
+                <img src="./images/icons/Twitch.png" alt="Twitch Icon" class="link-icon" />
                 <span>Twitch</span>
               </a>
               <a href="https://github.com/dustwyn" target="_blank" rel="noopener noreferrer" class="link-button">
                 <picture>
                   <source srcset="./images/icons/GitHub-dark.png" media="(prefers-color-scheme: light)">
-                  <img src="./images/icons/GitHub.png" alt="" class="link-icon" />
+                  <img src="./images/icons/GitHub.png" alt="GitHub Icon" class="link-icon" />
                 </picture>
                 <span>GitHub</span>
               </a>
             </div>
           </article>
         </section>
+
+        <section class="content-box chat">
+            <div class="titlebar"><h1>Chat</h1></div>
+              <!-- Chattable -->
+                <iframe src='https://iframe.chat/embed?chat=45757244' id='chattable' frameborder='none'></iframe>
+                  <script>
+                    chattable.initialize({
+                      stylesheet : "chattable.css"
+                    });
+                  </script>
+                <!-- Chattable End -->
+          </section>
+        </main>
+
 
         <div class="ads" aria-label="Advertisements">
           <div class="marquee-container">
@@ -130,6 +145,9 @@
                 </a>
                 <a>
                   <img src="./images/88x31/pawbs.gif" alt="I made this because im awesome." loading="lazy" />
+                </a>
+                <a href="https://nekoweb.org/" target="_blank" rel="noopener noreferrer">
+                  <img src="./images/88x31/nekoweb.gif" alt="nekoweb.org" loading="lazy" />
                 </a>
                 <a href="https://resonite.com/" target="_blank" rel="noopener noreferrer">
                   <img src="./images/88x31/resonite.gif" alt="Resonite Game" loading="lazy" />
@@ -151,7 +169,7 @@
                 </a>
               </div>
               <div class="scroller-content">
-                <!-- this is a dupelicate of the ads above so it can loop, I dont want to use JavaScript much. -->
+                <!-- this is a duplicate of the ads above so it can loop, I dont want to use JavaScript much. -->
                 <a href="https://vscodium.com/" target="_blank" rel="noopener noreferrer">
                   <img src="./images/88x31/vscodium.gif" alt="VSCodium Ad" loading="lazy" />
                 </a>
@@ -160,6 +178,9 @@
                 </a>
                 <a>
                   <img src="./images/88x31/pawbs.gif" alt="I made this because im awesome." loading="lazy" />
+                </a>
+                <a href="https://nekoweb.org/" target="_blank" rel="noopener noreferrer">
+                  <img src="./images/88x31/nekoweb.gif" alt="nekoweb.org" loading="lazy" />
                 </a>
                 <a href="https://resonite.com/" target="_blank" rel="noopener noreferrer">
                   <img src="./images/88x31/resonite.gif" alt="Resonite Game" loading="lazy" />
@@ -183,13 +204,25 @@
             </div>
           </div>
         </div>
-      </main>
+
+      <article class="content-box">
+        <div class="titlebar">
+          <h1>Ads</h1>
+        </div>
+        <div class="content da-content">
+          <a href="" target="_blank">
+            <img src="./images/sda-backwards/Test.png" alt="Banner Ad" />
+          </a>
+        </div>
+        <div class="content">
+          <p><strong>Disclaimer:</strong> these aren't sponsored ads, they are just things I enjoy. This gets updated every 15 seconds or whenever you refresh the page.</p>
+        </div>
+      </article>
 
       <footer class="footer">
         Made with <span aria-hidden="true">♡</span> by dustwyn. </footer>
     </div>
   </div>
-</body>
 <script>
   // This script lets you copy my email.
   document.addEventListener('DOMContentLoaded', function () {
@@ -208,5 +241,52 @@
     });
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sdaAds = [
+    { image: "BTA.png", url: "https://www.betterthanadventure.net/" },
+    { image: "REPO.png", url: "https://store.steampowered.com/app/3241660/REPO/" },
+    { image: "Zen.png", url: "https://zen-browser.app/" },
+    { image: "Modrinth.png", url: "https://modrinth.com/" },
+    { image: "Resonite.png", url: "https://resonite.com/" },
+    { image: "cow.png", url: "https://en.wikipedia.org/wiki/Cattle" },
+    { image: "chickenalfredo.png", url: "https://en.wikipedia.org/wiki/Fettuccine_Alfredo" }
+  ];
+
+  const adContainer = document.querySelector(".da-content a img");
+  const adLink = document.querySelector(".da-content a");
+
+  function pickRandomAd() {
+    let used = JSON.parse(localStorage.getItem("usedSdaImages")) || [];
+
+    // Reset used list if all have been shown
+    if (used.length >= sdaAds.length) {
+      used = [];
+    }
+
+    // Filter remaining ads
+    const remaining = sdaAds.filter(ad => !used.includes(ad.image));
+
+    // Pick random from the remaining
+    const randomIndex = Math.floor(Math.random() * remaining.length);
+    const chosenAd = remaining[randomIndex];
+
+    // Update that darn DOM
+    if (adContainer && adLink) {
+      adContainer.src = `./images/sda-backwards/${chosenAd.image}`;
+      adContainer.alt = `Ad Image - ${chosenAd.image}`;
+      adLink.href = chosenAd.url;
+    }
+
+    // Update list of used ads
+    used.push(chosenAd.image);
+    localStorage.setItem("usedSdaImages", JSON.stringify(used));
+  }
+
+  pickRandomAd();
+  setInterval(pickRandomAd, 15000); // every 15 seconds
+});
+</script>
+</body>
 
 </html>
