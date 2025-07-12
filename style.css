@@ -22,18 +22,19 @@
 */
 :root {
   /* Base Colors */
-  --color-bg: #f4f1ec;
-  --color-surface: #faf7f2;
-  --color-border: #a48f79;
-  --color-accent: #c4b09a;
-  --color-accent-light: #e1d5c8;
-  --color-text: #222;
-  --color-text-light: #555;
-  --color-link: #6a4c3b;
-  --color-link-hover: #4a3428;
-  --color-selection-bg: #6a4c3b;
+  --color-bg: #1f1b17;
+  --color-surface: #2a2420;
+  --color-border: #6f5e4c;
+  --color-accent: #8d7762;
+  --color-accent-light: #3a332c;
+  --color-text: #e9e4df;
+  --color-link: #e9e4df;
+  --color-link-hover: #c9beb3;
+  --color-selection-bg: #5d4033;
   --color-selection-text: #fff;
-  --color-mark-bg: #d9c7b8;
+  --color-mark-bg: #4e433a;
+  --color-banner-dark: radial-gradient(#3a332c, #1f1b17);
+  --color-banner: var(--color-banner-dark);
 
   /* Font Sizes */
   --font-size-base: 20px;
@@ -50,7 +51,24 @@
   --border-width: 2px;
 }
 
-/* Base Styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f7f4ef;
+    --color-surface: #fffdf8;
+    --color-border: #b8a590;
+    --color-accent: #d2bba3;
+    --color-accent-light: #e8dfd6;
+    --color-text: #2a1e16;
+    --color-link: #2a1e16;
+    --color-link-hover: #5d4033;
+    --color-selection-bg: #7c5b45;
+    --color-selection-text: #fff;
+    --color-mark-bg: #e3d3c3;
+    --color-banner-light: radial-gradient(#e8dfd6, #d2bba3);
+    --color-banner: var(--color-banner-light);
+  }
+}
+
 html {
   font-family: 'Inter', sans-serif;
   font-size: var(--font-size-base);
@@ -60,10 +78,10 @@ html {
 }
 
 body {
-  background-color: #472117;
+  background-color: var(--color-bg);
   margin: 0;
   min-height: 100vh;
-  background-image: url('./images/background.png');
+  background-image: url('./images/background.png');;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -74,7 +92,6 @@ iframe {
   height: 400px;
 }
 
-/* Scrollbars */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) var(--color-accent-light);
@@ -90,7 +107,6 @@ iframe {
   border-radius: 5px;
 }
 
-/* Selection */
 ::selection {
   background: var(--color-selection-bg);
   color: var(--color-selection-text);
@@ -101,7 +117,6 @@ mark {
   color: var(--color-text);
 }
 
-/* Layout */
 .wrap {
   box-sizing: border-box;
   padding: var(--spacing-medium);
@@ -116,7 +131,6 @@ mark {
   min-width: 400px;
 }
 
-/* Header */
 .header {
   margin-bottom: var(--spacing-medium);
   border: var(--border-width) solid var(--color-border);
@@ -131,12 +145,13 @@ mark {
   width: 100%;
   height: 200px;
   text-decoration: none;
+  color: var(--color-text);
 }
 
 .banner {
   width: 100%;
   height: 200px;
-  background: radial-gradient(var(--color-accent-light), var(--color-accent));
+  background: var(--color-banner);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +166,6 @@ mark {
   image-rendering: pixelated;
 }
 
-/* Footer */
 .footer {
   border: var(--border-width) solid var(--color-border);
   padding: var(--spacing-small);
@@ -159,10 +173,9 @@ mark {
   font-size: var(--font-size-small);
   font-weight: bold;
   background: var(--color-accent-light);
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
-/* Navigation */
 .nav {
   display: flex;
   gap: var(--spacing-small);
@@ -195,7 +208,6 @@ mark {
   color: var(--color-link-hover);
 }
 
-/* Flex Row for Sections */
 .flex-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -219,9 +231,9 @@ mark {
   background: var(--color-surface);
   min-height: 100px;
   overflow-wrap: break-word;
+  color: var(--color-text);
 }
 
-/* Links Box */
 .links-box .links-content {
   display: flex;
   flex-direction: column;
@@ -241,6 +253,7 @@ mark {
   font-weight: 500;
   transition: background 0.2s ease, color 0.2s ease;
 }
+
 .link-button:hover {
   background: var(--color-accent-light);
   color: var(--color-link-hover);
@@ -259,14 +272,15 @@ mark {
   border: var(--border-width) solid var(--color-border);
   padding: 0 var(--spacing-medium);
   height: 45px;
+  color: var(--color-text);
 }
 
 .titlebar h1 {
   font-size: var(--font-size-heading);
   margin: 0;
+  color: var(--color-text);
 }
 
-/* Ads but not really ads idk */
 .ads {
   display: flex;
   justify-content: center;
@@ -307,7 +321,6 @@ mark {
   }
 }
 
-/* Smaller devices (sorta responsive) */
 @media (max-width: 768px) {
   html {
     font-size: 18px;
