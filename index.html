@@ -65,16 +65,15 @@
       </nav>
 
       <main class="main">
-        <section class="flex-row"> <article class="content-box mini-about"> <div class="titlebar"><h1>Welcome!</h1></div>
-            <div class="content">
-              <p>This website is under construction.</p>
-            </div>
-          </article>
-          <article class="content-box mini-about"> <div class="titlebar"><h1>Current Mood</h1></div>
-            <div class="content">
-              <a href="https://www.imood.com/users/dustwyn">
-                <img style="image-rendering: pixelated; width: 116px; height: auto;" src="https://moods.imood.com/display/uname-dustwyn/trans-1/imood.gif" alt="Current mood of dustwyn on imood.com" loading="lazy" /> </a>
-            </div>
+        <section class="flex-row"> 
+          <article class="content-box"> 
+            <div class="titlebar"><h1>Hello!</h1></div>
+              <div class="content">
+                <p>
+                  This website is under construction.<br>
+                  <img style="image-rendering: pixelated; max-height: 270px;" src="./images/construction.gif" />
+                </p>
+              </div>
           </article>
         </section>
         <section class="flex-row">
@@ -83,10 +82,15 @@
               <h1>Links</h1>
             </div>
             <div class="content links-content">
-              <a href="mailto:contact@dustwyn.com" target="_blank" rel="noopener noreferrer" class="link-button">
-                <img src="./images/icons/Mail.png" alt="" class="link-icon" />
-                <span>E-Mail</span>
-              </a>
+              <div class="link-row">
+                <a href="mailto:contact@dustwyn.com" target="_blank" rel="noopener noreferrer" class="link-button email-button">
+                  <img src="./images/icons/Mail.png" alt="" class="link-icon" />
+                  <span>E-Mail</span>
+                </a>
+                <button class="copy-button" data-email="contact@dustwyn.com" title="Copy Email">
+                  📋
+                </button>
+              </div>
               <a href="https://dustwyn.com/discord" target="_blank" rel="noopener noreferrer" class="link-button">
                 <img src="./images/icons/Discord.png" alt="" class="link-icon" />
                 <span>Discord Community</span>
@@ -102,6 +106,13 @@
               <a href="https://www.twitch.tv/dustwynlive" target="_blank" rel="noopener noreferrer" class="link-button">
                 <img src="./images/icons/Twitch.png" alt="" class="link-icon" />
                 <span>Twitch</span>
+              </a>
+              <a href="https://github.com/dustwyn" target="_blank" rel="noopener noreferrer" class="link-button">
+                <picture>
+                  <source srcset="./images/icons/GitHub-dark.png" media="(prefers-color-scheme: light)">
+                  <img src="./images/icons/GitHub.png" alt="" class="link-icon" />
+                </picture>
+                <span>GitHub</span>
               </a>
             </div>
           </article>
@@ -179,4 +190,23 @@
     </div>
   </div>
 </body>
+<script>
+  // This script lets you copy my email.
+  document.addEventListener('DOMContentLoaded', function () {
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const email = button.getAttribute('data-email');
+        navigator.clipboard.writeText(email).then(() => {
+          button.textContent = '✅';
+          setTimeout(() => {
+            button.textContent = '📋';
+          }, 2000);
+        });
+      });
+    });
+  });
+</script>
+
 </html>
