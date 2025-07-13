@@ -157,12 +157,16 @@ mark {
 }
 
 .logo {
-  width: 180px;
-  height: 180px;
-  max-width: 180px;
-  max-height: 180px;
+  width: 160px;
+  height: 160px;
+  max-width: 160px;
+  max-height: 160px;
   object-fit: contain;
   image-rendering: pixelated;
+  border: var(--border-width) dashed var(--color-border);
+  border-radius: 32px;
+  padding: 8px;
+  background-color: var(--color-surface);
 }
 
 .footer {
@@ -479,6 +483,7 @@ mark {
   }
   .logo {
     max-height: 120px;
+    max-width: 120px;
   }
   .banner-da img {
     max-width: 100%;
