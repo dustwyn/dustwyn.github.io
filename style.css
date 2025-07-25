@@ -338,47 +338,6 @@ mark {
   min-width: 0;
 }
 
-.banner-da {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-accent-light);
-  border: var(--border-width) solid var(--color-border);
-  padding: var(--spacing-small);
-  margin-bottom: var(--spacing-medium);
-}
-
-.banner-da img {
-  width: 100%;
-  max-width: 980px;
-  height: auto;
-  max-height: 240px;
-  display: block;
-  background-repeat: no-repeat;
-}
-
-.da-content {
-  padding: 0;
-  background: var(--color-surface);
-  min-height: 100px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  color: var(--color-text);
-  display: block;
-}
-
-.content.da-content {
-  padding: 0 !important;
-}
-
-.da-content img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  object-fit: contain;
-}
-
 .ads {
   display: flex;
   justify-content: center;

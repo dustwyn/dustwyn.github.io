@@ -205,21 +205,6 @@
           </div>
         </div>
 
-      <article class="content-box">
-        <div class="titlebar">
-          <h1>Fun images of things I like.</h1>
-        </div>
-        <div class="content da-content">
-          <a href="" target="_blank">
-            <img src="./images/sda-backwards/Test.png" alt="Banner Ad" />
-          </a>
-        </div>
-        <div class="content">
-          <p><strong>Disclaimer:</strong> these aren't sponsored ads.</p>
-          <p>This gets updated every 15 seconds or whenever you refresh the page.</p>
-        </div>
-      </article>
-
       <footer class="footer">
         Made with <span aria-hidden="true">♡</span> by dustwyn. </footer>
     </div>
@@ -241,52 +226,6 @@
       });
     });
   });
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sdaAds = [
-    { image: "BTA.png", url: "https://www.betterthanadventure.net/" },
-    { image: "REPO.png", url: "https://store.steampowered.com/app/3241660/REPO/" },
-    { image: "Zen.png", url: "https://zen-browser.app/" },
-    { image: "Modrinth.png", url: "https://modrinth.com/" },
-    { image: "Resonite.png", url: "https://resonite.com/" },
-    { image: "cow.png", url: "https://en.wikipedia.org/wiki/Cattle" },
-    { image: "chickenalfredo.png", url: "https://en.wikipedia.org/wiki/Fettuccine_Alfredo" }
-  ];
-
-  const adContainer = document.querySelector(".da-content a img");
-  const adLink = document.querySelector(".da-content a");
-
-  function pickRandomAd() {
-    let used = JSON.parse(localStorage.getItem("usedSdaImages")) || [];
-
-    // Reset used list if all have been shown
-    if (used.length >= sdaAds.length) {
-      used = [];
-    }
-
-    // Filter remaining ads
-    const remaining = sdaAds.filter(ad => !used.includes(ad.image));
-
-    // Pick random from the remaining
-    const randomIndex = Math.floor(Math.random() * remaining.length);
-    const chosenAd = remaining[randomIndex];
-
-    // Update that darn DOM
-    if (adContainer && adLink) {
-      adContainer.src = `./images/sda-backwards/${chosenAd.image}`;
-      adContainer.alt = `Ad Image - ${chosenAd.image}`;
-      adLink.href = chosenAd.url;
-    }
-
-    // Update list of used ads
-    used.push(chosenAd.image);
-    localStorage.setItem("usedSdaImages", JSON.stringify(used));
-  }
-
-  pickRandomAd();
-  setInterval(pickRandomAd, 15000); // every 15 seconds
-});
 </script>
 </body>
 
