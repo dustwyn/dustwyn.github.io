@@ -252,6 +252,25 @@ mark {
   object-fit: contain;
 }
 
+.content-box .content-video {
+  padding: 0;
+  overflow: hidden;
+  max-height: none;
+}
+
+.content-box .content-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  max-height: none;
+    border: var(--border-width) solid var(--color-border);
+}
+
+.content-box.video-box {
+  max-height: none;
+}
+
 .links-box .links-content {
   display: flex;
   flex-direction: column;
